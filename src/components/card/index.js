@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 
 import "./style.css"
 
-const Card = () => {
+const Card = props => {
   const [classFlip, setClassFlip] = useState("");
   const [flipping, setFlipping] = useState(false);
+  const { Front, Back, id, handleFlip, enableSelect } = props;
 
 
   const flipCard = () => {
     setClassFlip(classFlip + " card--flipped");
     setTimeout(() => {
       //Here i will handle when te user flips the card. It happend after the effect is over.
-      console.log("flipped");
+      handleFlip({ id: id, unflipCard: unflipCard });
+      console.log(id)
     }, 200)
   }
 
@@ -26,8 +28,7 @@ const Card = () => {
 
   const handleClick = e => {
     e.stopPropagation();
-    flipCard();
-    if (!flipping) {
+    if (enableSelect && !flipping) {
       if (classFlip.includes("card--flipped")) {
         unflipCard();
       } else {
@@ -42,14 +43,12 @@ const Card = () => {
         <div className="card-face card-backing">
           <div className="grain-overlay"></div>
           <div className="back-main">
-
-            Este es el bueno
+            <Front />
 
           </div>
         </div>
         <div className="card-face card-front">
-          Este es el de atras
-
+          <Back />
         </div>
       </div>
     </div>

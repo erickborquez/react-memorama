@@ -1,0 +1,28 @@
+.board{
+    background-color: #f1f1f1;
+    width:100%;
+    max-width: 120rem;
+    margin:5rem auto; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+}
+.card-front-view{
+    background-color: pink;
+    font-size: 20rem;
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-back-view{
+    background-color: #BADA55;
+    font-size: 20rem;
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

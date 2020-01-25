@@ -1,12 +1,29 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 .card-scene {
-  width: 37rem;
-  height: 47rem;
+  width: 23rem;
+  height: 30rem;
   perspective: 600px;
   animation: cardAppear 1.4s forwards;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 5s;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Opera and Firefox */
+}
+.card-scene:hover{
+  filter: saturate(110%);
+  cursor: pointer;
 }
 
 @keyframes cardAppear {
@@ -86,18 +103,27 @@
   height: 100%;
   width: 100%;
   background: var(--color-backing-light1);
-  background: linear-gradient(135deg, var(--color-backing-light1) 0% 25%, var(--color-backing-light2) 25% 50%, var(--color-backing-light3) 50% 75%, var(--color-backing-light4) 75%);
+  background: linear-gradient(
+    135deg,
+    var(--color-backing-light1) 0% 25%,
+    var(--color-backing-light2) 25% 50%,
+    var(--color-backing-light3) 50% 75%,
+    var(--color-backing-light4) 75%
+  );
   z-index: 1;
   border-radius: 0 0 3px 3px;
+  overflow: hidden;
 }
 
 .card-face {
   position: absolute;
   backface-visibility: hidden;
-  box-shadow: 0 0 3px 2px #4e4e4e;
-  height: 46rem;
-  width: 36rem;
+  box-shadow: 0 0 3px 1px #4e4e4e;
+  width: 23rem;
+  height: 30rem;
   border-radius: 9px;
+  overflow: hidden;
+
   border: 0.5rem solid var(--color-bone);
 }
 
