@@ -1,13 +1,14 @@
 import React from 'react';
+import Board from './components/Board'
 
-import Card from './components/card'
+
 
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Card />
+      <Board />
     </div>
   );
 }
