@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-memorama/static/css/main.0cd6ff66.chunk.css",
+    "main.js": "/react-memorama/static/js/main.b0b929f5.chunk.js",
+    "main.js.map": "/react-memorama/static/js/main.b0b929f5.chunk.js.map",
+    "runtime-main.js": "/react-memorama/static/js/runtime-main.e6fef573.js",
+    "runtime-main.js.map": "/react-memorama/static/js/runtime-main.e6fef573.js.map",
+    "static/js/2.e13b527e.chunk.js": "/react-memorama/static/js/2.e13b527e.chunk.js",
+    "static/js/2.e13b527e.chunk.js.map": "/react-memorama/static/js/2.e13b527e.chunk.js.map",
+    "index.html": "/react-memorama/index.html",
+    "precache-manifest.be0109fdd827bc080e50ff29fcfd05c9.js": "/react-memorama/precache-manifest.be0109fdd827bc080e50ff29fcfd05c9.js",
+    "service-worker.js": "/react-memorama/service-worker.js",
+    "static/css/main.0cd6ff66.chunk.css.map": "/react-memorama/static/css/main.0cd6ff66.chunk.css.map",
+    "static/js/2.e13b527e.chunk.js.LICENSE": "/react-memorama/static/js/2.e13b527e.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e6fef573.js",
+    "static/js/2.e13b527e.chunk.js",
+    "static/css/main.0cd6ff66.chunk.css",
+    "static/js/main.b0b929f5.chunk.js"
+  ]
+}
