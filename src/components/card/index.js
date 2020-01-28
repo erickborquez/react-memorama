@@ -22,7 +22,7 @@ import "./style.css"
 
 
 const Card = props => {
-  const { Front, Back, isFlipped, handleClick, id } = props;
+  const { Front, Back, isFlipped, handleClick, id, groupId } = props;
   const [classFlip, setClassFlip] = useState("");
 
   const flipCard = () => {
@@ -48,7 +48,7 @@ const Card = props => {
   }, [isFlipped])
 
   return (
-    <div className="card-scene" onClick={() => !isFlipped ? handleClick(id) : null}>
+    <div className="card-scene" onClick={() => !isFlipped ? handleClick(id, groupId) : null}>
       <div id="card" className={`card ${classFlip}`}>
         <div className="card-face card-backing">
           <div className="grain-overlay"></div>
