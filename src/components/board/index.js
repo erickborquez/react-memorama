@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../Card'
+import Card from '../card'
 import { shuffle } from '../../utilities';
 
 import './style.css'
@@ -24,38 +24,59 @@ const back = content => {
       {content}
     </div>)
 }
-const Board = () => {
-  const [cardFlipped, setCardFlipped] = useState({});
-  const [enableSelect, setEnableSelect] = useState(true);
-  const [cards, setCards] = useState([])
+// const Board = (status) => {
 
-  const handleCardFlip = card => {
-    if (cardFlipped.id !== undefined) {
-      ///When the user select 2 cards, they must wait to aniation end to select more cards
-      setEnableSelect(false);
-      setTimeout(() => {
-        setEnableSelect(true);
-      }, 500);
+//   console.log(status);
 
-      if (cardFlipped.id === card.id) {
-        /// Here i will handle when the user selects 2 equal cards
-      } else {
-        card.unflipCard();
-        cardFlipped.unflipCard();
-      }
-      setCardFlipped({});
-    } else {
-      setCardFlipped(card);
-    }
-  }
+//   const [cardFlipped, setCardFlipped] = useState({});
+//   const [enableSelect, setEnableSelect] = useState(true);
+//   const [cards, setCards] = useState([])
 
-  useEffect(() => {
-    setCards(shuffle([...CARDS_CONTENT, ...CARDS_CONTENT]));
-  }, [])
+//   const handleCardFlip = card => {
+//     if (cardFlipped.id !== undefined) {
+//       ///When the user select 2 cards, they must wait to aniation end to select more cards
+//       setEnableSelect(false);
+//       setTimeout(() => {
+//         setEnableSelect(true);
+//       }, 500);
+
+//       if (cardFlipped.id === card.id) {
+//         /// Here i will handle when the user selects 2 equal cards
+//       } else {
+//         card.unflipCard();
+//         cardFlipped.unflipCard();
+//       }
+//       setCardFlipped({});
+//     } else {
+//       setCardFlipped(card);
+//     }
+//   }
+
+//   useEffect(() => {
+//     setCards(shuffle([...CARDS_CONTENT, ...CARDS_CONTENT]));
+//   }, [])
+//   return (
+//     <div className="board">
+//       {cards.map(({ content, id }, i) => {
+//         return <Card Front={front} Back={back(content)} handleFlip={handleCardFlip} id={id} enableSelect={enableSelect} key={i} />
+//       })}
+//     </div>
+//   )
+// }
+
+const Board = ({ status, handleCardClick }) => {
+  const { cards } = status;
+
   return (
     <div className="board">
-      {cards.map(({ content, id }, i) => {
-        return <Card Front={front} Back={back(content)} handleFlip={handleCardFlip} id={id} enableSelect={enableSelect} key={i} />
+      {cards.map(({ content, id, isFlipped }, i) => {
+        return <Card
+          Front={front}
+          Back={back(content)}
+          key={i}
+          id={id}
+          isFlipped={isFlipped}
+          handleClick={handleCardClick} />
       })}
     </div>
   )

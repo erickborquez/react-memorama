@@ -1,7 +1,6 @@
 .board{
     background-color: #f1f1f1;
     width:100%;
-    max-width: 120rem;
     margin:5rem auto; 
     display: flex;
     flex-wrap: wrap;
